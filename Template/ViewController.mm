@@ -106,7 +106,7 @@
     }
     else if (segControl.selectedSegmentIndex == 2)
     {
-        trackingFolder = @"Assets/tdPipeMin";
+        trackingFolder = @"Assets/tdPipeMid";
     }
 
     
@@ -137,6 +137,8 @@
     if( initModel )
     {
         m_metaioSDK->unloadGeometry(initModel);
+        initModel = nil;
+        
     }
     
     
@@ -147,7 +149,7 @@
     if( initModel )
     {
         
-        initModel->setCoordinateSystemID(1);
+        initModel->setCoordinateSystemID(2);
         
         initModel->setVisible(true);
         
@@ -173,7 +175,7 @@
     if( visModel )
     {
         
-        visModel->setCoordinateSystemID(2);
+        visModel->setCoordinateSystemID(1);
         
         visModel->setVisible(true);
         
