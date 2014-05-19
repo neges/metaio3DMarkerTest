@@ -5,9 +5,25 @@
 # http://www.righthemisphere.com/
 # 
 
-newmtl Paint_Matte_Green
+newmtl Material6
 Ka 0.117647 0.117647 0.117647
-Kd 0.219608 0.521569 0.164706
+Kd 0 1 0
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material__2
+Ka 0.117647 0.117647 0.117647
+Kd 0.752941 0.752941 0.752941
 Ks 0.752941 0.752941 0.752941
 illum 2
 Ns 8
