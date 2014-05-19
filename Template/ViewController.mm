@@ -32,7 +32,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     documentsDirectory = [paths objectAtIndex:0];
     
-    trackingFolder = @"Assets/tdPipeFull";
+    trackingFolder = @"Assets/1";
     
        
 }
