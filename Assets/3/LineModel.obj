@@ -1,0 +1,13 @@
+# Line model to be used with the metaio SDK.
+# This file can be imported and edited with blender 2.68a or newer.
+# blender is available for free: http://www.blender.org
+o LineModel
+v 336.239 -631.097 298.092
+v 334.85 768.372 298.138
+v 335.134 766.049 -798.979
+v 335.322 766.564 300.856
+v 335.155 -626.084 -798.7
+v 335.162 -627.712 300.85
+l 1 2
+l 3 4
+l 5 6

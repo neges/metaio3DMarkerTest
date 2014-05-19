@@ -98,15 +98,27 @@
     
     if (segControl.selectedSegmentIndex == 0)
     {
-        trackingFolder = @"Assets/tdPipeFull";
+        trackingFolder = @"Assets/1";
     }
     else if (segControl.selectedSegmentIndex == 1)
     {
-        trackingFolder = @"Assets/tdPipeMax";
+        trackingFolder = @"Assets/2";
     }
     else if (segControl.selectedSegmentIndex == 2)
     {
-        trackingFolder = @"Assets/tdPipeMid";
+        trackingFolder = @"Assets/3";
+    }
+	else if (segControl.selectedSegmentIndex == 3)
+    {
+        trackingFolder = @"Assets/4";
+    }
+	else if (segControl.selectedSegmentIndex == 4)
+    {
+        trackingFolder = @"Assets/5";
+    }
+	else if (segControl.selectedSegmentIndex == 5)
+    {
+        trackingFolder = @"Assets/6";
     }
 
     
