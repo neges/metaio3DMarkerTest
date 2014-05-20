@@ -13,27 +13,23 @@
 @interface ViewController : MetaioSDKViewController
 {
 
-    
-    NSString *documentsDirectory;
     NSString *trackingFolder;
+	NSString *visModelName;
+	
     
     metaio::IGeometry* initModel;
     metaio::IGeometry* visModel;
     
     
-    __weak IBOutlet UITextField *transX;
-    __weak IBOutlet UITextField *transY;
-    __weak IBOutlet UITextField *transZ;
-    
-    __weak IBOutlet UITextField *rotX;
-    __weak IBOutlet UITextField *rotY;
-    __weak IBOutlet UITextField *rotZ;
-    
     __weak IBOutlet UILabel *label;
     
+	IBOutlet UIImageView *edgesView;
 }
 
 - (IBAction)changeTrackingData:(id)sender;
 - (IBAction)takeScreenshot:(id)sender;
+- (IBAction)resetTracking:(id)sender;
+- (IBAction)showEdges:(id)sender;
+- (IBAction)changeModel:(id)sender;
 
 @end

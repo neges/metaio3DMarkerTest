@@ -28,10 +28,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //Documents Ornder abfragen
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    documentsDirectory = [paths objectAtIndex:0];
-    
+
+	visModelName = @"system_box";
     trackingFolder = @"Assets/1";
     
        
@@ -54,40 +52,42 @@
 
     //TrackingValues Abfragen
         metaio::TrackingValues currentTrackingValues = m_metaioSDK->getTrackingValues(1);
-
-            //Translation  und Rotation abfragen
-            metaio::Vector3d markerTranslation = currentTrackingValues.translation;
-            metaio::Vector3d markerRotation = currentTrackingValues.rotation.getEulerAngleDegrees();
-    
-            //Werte in GUI schreiben
-            [transX setText:[NSString stringWithFormat:@"%1.3f",  markerTranslation.x]];
-            [transY setText:[NSString stringWithFormat:@"%1.3f",  markerTranslation.y]];
-            [transZ setText:[NSString stringWithFormat:@"%1.3f",  markerTranslation.z]];
-    
-            [rotX setText:[NSString stringWithFormat:@"%1.3f",  markerRotation.x]];
-            [rotY setText:[NSString stringWithFormat:@"%1.3f",  markerRotation.y]];
-            [rotZ setText:[NSString stringWithFormat:@"%1.3f",  markerRotation.z]];
     
             if (currentTrackingValues.quality>0)
+			{
                 [label setBackgroundColor:[UIColor greenColor]];
-            else
+				[edgesView setHidden:true];
+			}
+			else
+			{
                 [label setBackgroundColor:[UIColor redColor]];
-    
+				
+			}
 
 }
 
 -(IBAction)takeScreenshot:(id)sender
 {
 
-	NSDate *date = [[NSDate alloc] init];
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"HH_mm_ss__ddMMyy"];
-    NSString* logDate = [formatter stringFromDate:date];
-    
-	NSString *screenShotFilename = [NSString stringWithFormat:@"%@.jpg",logDate];;
-	
-	m_metaioSDK->requestScreenshot([[documentsDirectory stringByAppendingPathComponent:screenShotFilename] UTF8String],glView->defaultFramebuffer, glView->colorRenderbuffer);
+	m_metaioSDK->requestScreenshot(glView->defaultFramebuffer, glView->colorRenderbuffer);
+}
 
+- (IBAction)showEdges:(id)sender
+{
+	
+	if (edgesView.isHidden)
+	{
+		[edgesView setHidden:false];
+	}else
+	{
+		[edgesView setHidden:true];
+	}
+	
+}
+
+-(IBAction)resetTracking:(id)sender
+{
+	 [self setTrackingData];
 }
 
 - (IBAction)changeTrackingData:(id)sender
@@ -122,11 +122,34 @@
     }
 
     
-    [self setTrackingDate];
+    [self setTrackingData];
     
 }
 
--(void) setTrackingDate
+- (IBAction)changeModel:(id)sender
+{
+    
+    UISegmentedControl *segControl = sender;
+    
+    
+    if (segControl.selectedSegmentIndex == 0)
+    {
+        visModelName = @"system_box";
+    }
+    else if (segControl.selectedSegmentIndex == 1)
+    {
+        visModelName = @"system_front";
+    }
+    else if (segControl.selectedSegmentIndex == 2)
+    {
+        visModelName = @"system_back";
+    }
+	    
+    [self setVisualisationModel];
+    
+}
+
+-(void) setTrackingData
 {
     
     // load our tracking configuration
@@ -139,7 +162,32 @@
 	}
     
     [self setInitModel];
+	
+	NSString* edgesPicFile = [[NSBundle mainBundle] pathForResource:@"ScreenShot1" ofType:@"png" inDirectory:trackingFolder];
+	UIImage* edgesImage = [[UIImage alloc] initWithContentsOfFile:edgesPicFile];
+	
+	edgesImage = [self imageWithImage:edgesImage scaledTo:2048 / edgesImage.size.width];
+	
+				
+	[edgesView setImage:edgesImage];
+	
     
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledTo:(CGFloat)scaleFactor {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+	CGSize newSize = CGSizeMake(image.size.width*scaleFactor, image.size.height*scaleFactor);
+
+	
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+		
+	
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 -(void) setInitModel
@@ -179,9 +227,19 @@
 
 -(void) setVisualisationModel
 {
+	
+	//unload old initModel
+    if( visModel )
+    {
+        m_metaioSDK->unloadGeometry(visModel);
+        visModel = nil;
+        
+    }
+	
+	
     // load content
     
-    NSString* objModel = [[NSBundle mainBundle] pathForResource:@"system_box" ofType:@"obj" inDirectory:@"Assets"];
+    NSString* objModel = [[NSBundle mainBundle] pathForResource:visModelName ofType:@"obj" inDirectory:@"Assets"];
     visModel = m_metaioSDK->createGeometry([objModel UTF8String]);
     
     if( visModel )
@@ -203,6 +261,22 @@
     
 }
 
+-(void)initLight
+{
+	
+    metaio::ILight*		m_pLight;
+    
+    m_pLight = m_metaioSDK->createLight();
+    m_pLight->setType(metaio::ELIGHT_TYPE_DIRECTIONAL);
+    
+    m_metaioSDK->setAmbientLight(metaio::Vector3d(0.05f));
+    m_pLight->setDiffuseColor(metaio::Vector3d(1, 1, 1)); // white
+    
+    m_pLight->setCoordinateSystemID(0);
+	
+    
+}
+
 
 #pragma mark - @protocol metaioSDKDelegate
 
@@ -219,9 +293,11 @@
 {
     NSLog(@"The SDK is ready");
     
+	[self initLight];
+	
     [self setVisualisationModel];
     
-    [self setTrackingDate];
+    [self setTrackingData];
     
 
 	
@@ -258,6 +334,8 @@
 - (void) onScreenshotImageIOS:(UIImage *)image
 {
     NSLog(@"screenshot image is received %@", [image description]);
+	
+	UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
 }
 
 -(void) onScreenshot:(NSString *)filepath

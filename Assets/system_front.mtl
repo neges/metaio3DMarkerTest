@@ -1,0 +1,294 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  SAP Visual Enterprise Author x64 7.0.2.65
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl Material4
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material40
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material
+Ka 0.117647 0.117647 0.117647
+Kd 1 0.568627 0
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material1
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 0.6
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material2
+Ka 0.117647 0.117647 0.117647
+Kd 0 0 0
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material__6
+Ka 0.117647 0.117647 0.117647
+Kd 0.752941 0.752941 0.752941
+Ks 0.752941 0.752941 0.752941
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material3
+Ka 0.117647 0.117647 0.117647
+Kd 0.752941 0.752941 0.752941
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material30
+Ka 0.117647 0.117647 0.117647
+Kd 0.752941 0.752941 0.752941
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material41
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material42
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material43
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material44
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material45
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material46
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material47
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material48
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material49
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material410
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 1
+Ks 0.301177 0.301177 0.301177
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
