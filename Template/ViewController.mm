@@ -170,6 +170,7 @@
 	
 				
 	[edgesView setImage:edgesImage];
+	[edgesView setHidden:true];
 	
     
 }

@@ -5,7 +5,7 @@
 # http://www.righthemisphere.com/
 # 
 
-newmtl Material__1
+newmtl Green
 Ka 0.117647 0.117647 0.117647
 Kd 0 1 0
 Ks 0.752941 0.752941 0.752941

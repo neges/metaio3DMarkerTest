@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<TrackingData>
+<Sensors>
+<Sensor type="DummySensorSource">
+<SensorID>DummySensor1</SensorID>
+<Parameters>
+<updateInterval>40</updateInterval><!-- in ms-->
+</Parameters>
+<SensorCOS>
+<SensorCosID>DummyCos1</SensorCosID>
+<Parameters>
+<Pose>
+<Translation>
+<x>146.969</x>
+<y>228.919</y>
+<z>-1980.68</z>
+</Translation>
+<Rotation>
+<x>-0.360122</x>
+<y>0.558361</y>
+<z>0.62806</z>
+<w>0.405075</w>
+</Rotation>
+</Pose>
+</Parameters>
+</SensorCOS>
+</Sensor>
+</Sensors>
+</TrackingData>

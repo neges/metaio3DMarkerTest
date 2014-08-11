@@ -5,41 +5,9 @@
 # http://www.righthemisphere.com/
 # 
 
-newmtl Material
+newmtl Material__7
 Ka 0.117647 0.117647 0.117647
-Kd 1 0.568627 0
-Ks 0.301177 0.301177 0.301177
-illum 2
-Ns 8
-map_Kd 
-map_bump 
-bump 
-map_opacity 
-map_d 
-refl 
-map_kS 
-map_kA 
-map_Ns 
-
-newmtl Material1
-Ka 0.117647 0.117647 0.117647
-Kd 0.8 0.8 0.6
-Ks 0.301177 0.301177 0.301177
-illum 2
-Ns 8
-map_Kd 
-map_bump 
-bump 
-map_opacity 
-map_d 
-refl 
-map_kS 
-map_kA 
-map_Ns 
-
-newmtl Material__36
-Ka 0.117647 0.117647 0.117647
-Kd 0.752941 0.752941 0.752941
+Kd 0.298039 0.298039 0.298039
 Ks 0.752941 0.752941 0.752941
 illum 2
 Ns 8
@@ -53,10 +21,10 @@ map_kS
 map_kA 
 map_Ns 
 
-newmtl Material5
+newmtl Material__8
 Ka 0.117647 0.117647 0.117647
-Kd 0.6 0.6 0.6
-Ks 0.301177 0.301177 0.301177
+Kd 0 0 0
+Ks 0.752941 0.752941 0.752941
 illum 2
 Ns 8
 map_Kd 
@@ -69,10 +37,42 @@ map_kS
 map_kA 
 map_Ns 
 
-newmtl Material50
+newmtl Material__2
 Ka 0.117647 0.117647 0.117647
-Kd 0.6 0.6 0.6
-Ks 0.301177 0.301177 0.301177
+Kd 0.87451 0.87451 0.87451
+Ks 0.752941 0.752941 0.752941
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material__1
+Ka 0.117647 0.117647 0.117647
+Kd 0.694118 0.694118 0.694118
+Ks 0.752941 0.752941 0.752941
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material__4
+Ka 0.117647 0.117647 0.117647
+Kd 0.8 0.8 0.8
+Ks 0.752941 0.752941 0.752941
 illum 2
 Ns 8
 map_Kd 
