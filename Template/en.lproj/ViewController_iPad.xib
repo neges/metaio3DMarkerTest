@@ -83,8 +83,8 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <segments>
                                         <segment title="box"/>
-                                        <segment title="pipes front"/>
-                                        <segment title="pipes back"/>
+                                        <segment title="front"/>
+                                        <segment title="back"/>
                                     </segments>
                                     <connections>
                                         <action selector="changeModel:" destination="-1" eventType="valueChanged" id="xnM-Um-beu"/>
